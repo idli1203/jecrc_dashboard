@@ -1,7 +1,5 @@
 import streamlit as st
 import hashlib
-from login_db import get_connection, close_connection 
-
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
@@ -63,5 +61,5 @@ else:
             #st.rerun()  
         else:
             st.error("❌ Invalid Username or Password")
-        cursor.close()
-        close_connection(conn)  # Return connection to pool
+        # cursor.close()
+        # close_connection(conn)  # Return connection to pool
